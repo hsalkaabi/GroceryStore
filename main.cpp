@@ -34,7 +34,7 @@ int main()
   }
 }  while(input!='q' && input!='Q');
 
-    cout<<"\n== Items To Buy ==\n";
+    cout<<"== Items To Buy ==";
     for( int numItems=0; numItems<5; numItems++)
     {
     cout<< numItems+1;
