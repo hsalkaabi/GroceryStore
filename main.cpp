@@ -33,7 +33,7 @@ int main()
  {
 
              cout<<"==ITEMS TO BUY==";
-    for(int i=0; list.size(); i++)
+    for(int i=0; i<list.size(); i++)
     {
              cout<<endl<<i+1 << " "<<list[i];
     }        cout<<endl;
