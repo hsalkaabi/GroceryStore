@@ -1,49 +1,48 @@
 // Author: Hamad Alkaabi
 #include<iostream>
 #include<string>
+#include<vector>
 using namespace std;
 
 int main()
 {
-  string list[5]; //array of 5 strings
+  vector<string> list;
   int numItems = 0;
   char input;
   string input2;
  do
   {
 
-  cout<<"\n==GROCERY LIST MANAGER==";
-  cout<<"\nEnter your choice: ";
-  cout<<"\n (A)dd an item";
-  cout<<"\n (Q)uit";
-  cout<<"\nYour choice (A/Q): ";
-  cin>>input;
+             cout<<"\n==GROCERY LIST MANAGER==";
+             cout<<"\nEnter your choice: ";
+             cout<<"\n (A)dd an item";
+             cout<<"\n (Q)uit";
+             cout<<"\nYour choice (A/Q): "<<std:: flush;
+             cin>>input;
   if(input == 'A' || input == 'a')
   {
-       cout<<"What is the item?\n";
-       cin>>input2;
-  if(numItems<5)
-  {
-       list[numItems]=input2;
-       numItems++;
-  }
-  else
-  {
-       cout<<"You'll need a bigger list!\n";
-    }
-  }
-}  while(input!='q' && input!='Q');
+             cout<<"What is the item?\n";
+             cin>>input2;
 
-    cout<<"==ITEMS TO BUY==";
-    for(int numItems=0; numItems<5; numItems++)
-    {
-    cout<<endl<<numItems+1 << " ";
+        list.push_back(input2);
+  }
 
-    if(list[numItems]!="")
+} while(input!='q' && input!='Q');
+
+ if(list.size() !=0)
+ {
+
+             cout<<"==ITEMS TO BUY==";
+    for(int i=0; list.size(); i++)
     {
-    cout<<list[numItems];
-    }
-   
-}    cout<<endl;
+             cout<<endl<<i+1 << " "<<list[i];
+    }        cout<<endl;
+
+}else
+{
+            cout<<"No items to buy!"<<endl;
+
+            return 0;
+  }
   return 0;
 }
